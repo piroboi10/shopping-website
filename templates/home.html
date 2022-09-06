@@ -1,0 +1,27 @@
+<div class = "container-fluid">    
+    <div ng-include="'structure/jumbotron.html'"></div>
+<h1>Latest Posts</h1>
+<div class='row'>
+    <div class='col-md-12'>
+        <div class='panel-group'>
+            <div class='col-md-3 col-sm-4 col-xs-12' ng-repeat='blogs in latestBlogs' style='height:214px;'>
+                <div class='panel panel-default panel-primary'>
+                    <div class='panel-heading'>{{blogs.title}}</div>
+                    <div class='panel-body' ng-bind-html='blogs.content | htmlToPlainText | limitTo : 100'></div>
+                    <div class='panel-footer'>
+                        <div class='row'>
+                            <div class='col-md-8 col-sm-8' >
+                                <small>{{blogs.actions.comments.length}} Comments</small>
+                            </div>
+                            <div class='col-md-4 col-sm-4'>
+                                <a class='btn btn-xs btn-primary pull-right' href='#/view/{{blogs._id}}'>Read Now</a>
+                                <div class='clearfix'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
